@@ -1,4 +1,4 @@
-name: Pipeline de CI/CD - Meu Primeiro RobÃ´
+name: Pipeline de CI/CD - Meu Primeiro Roba´
 
 # Quando este workflow deve ser executado?
 
@@ -12,11 +12,11 @@ on:
 
     branches: [ main ]
 
-# Definindo os trabalhos (jobs) que serÃ£o executados
+# Definindo os trabalhos (jobs) que serao executados
 
 jobs:
 
-  # Job 1: VerificaÃ§Ãµes bÃ¡sicas
+  # Job 1: Verificasoes basicas
 
   verificacoes-basicas:
 
@@ -24,7 +24,7 @@ jobs:
 
     steps:
 
-    - name: 1. Baixando o cÃ³digo do repositÃ³rio
+    - name: 1. Baixando o codigo do repositorio
 
       uses: actions/checkout@v4      
 
@@ -46,7 +46,7 @@ jobs:
 
         else
 
-          echo "app.js nÃ£o encontrado"
+          echo "app.js nao encontrado"
 
           exit 1
 
@@ -54,35 +54,34 @@ jobs:
 
     - name: 3. Configurando Node.js
 
-      uses: actions/setup-node@v4
+      uses: actions/setup-node.js
 
       with:
 
         node-version: '18'
 
-    - name: 4. Executando a aplicaÃ§Ã£o
+    - name: 4. Executando a aplicasao
 
       run: |
 
-        echo "Iniciando a aplicaÃ§Ã£o..."
+        echo "Iniciando a aplicasao..."
 
         node app.js
 
-        echo "AplicaÃ§Ã£o executada com sucesso!"        
+        echo "Aplicasao executada com sucesso!"        
 
     - name: 5. Mensagem de sucesso
 
       run: |
 
-        echo "ParabÃ©ns! Seu primeiro pipeline de CI estÃ¡ funcionando!"
+        echo "Para! Seu primeiro pipeline de CI esta funcionando!"
 
-        echo "EstatÃ­sticas da execuÃ§Ã£o:"
+        echo "Estaticas da execusao:"
 
-        echo "   - RepositÃ³rio: ${{ github.repository }}"
+        echo "   - Repositorio: ${{ github.repository }}"
 
         echo "   - Branch: ${{ github.ref_name }}"
 
         echo "   - Commit: ${{ github.sha }}"
 
         echo "   - Autor: ${{ github.actor }}"
-----------------
