@@ -54,7 +54,7 @@ jobs:
 
     - name: 3. Configurando Node.js
 
-      uses: actions/setup-node.js
+      uses: actions/setup-node.]@ref
 
       with:
 
